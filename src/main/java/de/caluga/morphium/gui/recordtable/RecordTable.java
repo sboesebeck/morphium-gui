@@ -22,6 +22,7 @@ import org.jdesktop.swingx.decorator.HighlighterFactory;
 import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.text.LayeredHighlighter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -156,6 +157,13 @@ public class RecordTable<T> extends JPanel {
 
         updateView();
         delMi = new JMenuItem("löschen");
+        delMi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Morphium.get().deleteObject(getSelectedRecord());
+                updateView();
+            }
+        });
     }
 
     public void addDoubleClickListener(DoubleClickListener dc) {

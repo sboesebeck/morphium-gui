@@ -222,6 +222,7 @@ public class RecordTable<T> extends JPanel {
             }
             if (del && state.isDeleteable()) {
                 if (delMi == null) {
+                    delMi=new JMenuItem("löschen");
                     if (getSelectedRecord()==null) {
                         delMi.setEnabled(false);
                     }

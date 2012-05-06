@@ -5,6 +5,7 @@
 package de.caluga.morphium.gui.recordtable;
 
 import de.caluga.morphium.Morphium;
+import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.Query;
 import org.apache.log4j.Logger;
 
@@ -146,11 +147,11 @@ public class RecordTableState<T> {
 
     public Query<T> getSearch() {
         Query<T> ret = null;
-        if (!Morphium.isConfigured()) {
+        if (!MorphiumSingleton.isConfigured()) {
             return null;
         }
         if (initialSearch == null) {
-            ret = Morphium.get().createQueryFor(type);
+            ret = MorphiumSingleton.get().createQueryFor(type);
         } else {
             ret = initialSearch.clone();
         }
@@ -164,7 +165,7 @@ public class RecordTableState<T> {
 //                    Class fldType = Morphium.get().getTypeOfField(type, s);
                     String fldName = s;
                     Class type = getType();
-                    Class fldType = Morphium.get().getTypeOfField(type, fldName);
+                    Class fldType = MorphiumSingleton.get().getTypeOfField(type, fldName);
                     String txt = searchValues.get(s);
 
                     if (fldType.equals(String.class)) {
@@ -318,8 +319,8 @@ public class RecordTableState<T> {
 
     public List<String> getFieldsToShow() {
         if (fieldsToShow == null) {
-            if (Morphium.isConfigured()) {
-                fieldsToShow = Morphium.getFields(type);
+            if (MorphiumSingleton.isConfigured()) {
+                fieldsToShow = MorphiumSingleton.get().getFields(type);
             }
         }
         return fieldsToShow;

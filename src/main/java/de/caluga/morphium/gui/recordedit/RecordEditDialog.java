@@ -6,6 +6,7 @@
 package de.caluga.morphium.gui.recordedit;
 
 import de.caluga.morphium.Morphium;
+import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.gui.PanelClass;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
@@ -45,7 +46,7 @@ public class RecordEditDialog extends JDialog {
     }
 
     public RecordEditDialog(Object r, String title, boolean viewOnly) {
-        ObjectId id=Morphium.get().getId(r);
+        ObjectId id= MorphiumSingleton.get().getId(r);
 
         okBtn = new JButton(RecordEditPanel.STATUS_OK.toString());
         cancelBtn = new JButton(RecordEditPanel.STATUS_CANCEL.toString());
@@ -110,12 +111,12 @@ public class RecordEditDialog extends JDialog {
         String usr = "";
 
         if (r != null) {
-            if (Morphium.get().storesLastChange(cls)) {
-                final String lastChangeByField = Morphium.get().getLastChangeByField(cls);
+            if (MorphiumSingleton.get().storesLastChange(cls)) {
+                final String lastChangeByField = MorphiumSingleton.get().getLastChangeByField(cls);
 
                 if (lastChangeByField != null) {
                     try {
-                        usr = (String) Morphium.get().getValue(r, lastChangeByField);
+                        usr = (String) MorphiumSingleton.get().getValue(r, lastChangeByField);
                     } catch (IllegalAccessException e) {
                         log.error("Error accessing last change by-field - IllegalAccess!");
                     }
@@ -123,26 +124,26 @@ public class RecordEditDialog extends JDialog {
             }
         }
 
-        if (r != null && Morphium.get().storesLastChange(cls)) {
+        if (r != null && MorphiumSingleton.get().storesLastChange(cls)) {
             try {
                 bpnl.add(new JLabel("letzte Änderung: " + usr + " am "
-                        + df.format(Morphium.get().getLongValue(r, Morphium.get().getLastChangeField(cls)))));
+                        + df.format(MorphiumSingleton.get().getLongValue(r, MorphiumSingleton.get().getLastChangeField(cls)))));
             } catch (IllegalAccessException e) {
                 log.error("Error accessing last_change!!! Illegal access");
             }
         }
 
 
-        List<String> flds = Morphium.get().getFields(cls);
+        List<String> flds = MorphiumSingleton.get().getFields(cls);
 
         if (flds.contains("modified")) {
             try {
-                if (Morphium.get().getValue(r, "modified") != null) {
+                if (MorphiumSingleton.get().getValue(r, "modified") != null) {
                     String von = "";
                     if (flds.contains("modified_by_user")) {
-                        von = "von " + (String) Morphium.get().getValue(r, "modified_by_user");
+                        von = "von " + (String) MorphiumSingleton.get().getValue(r, "modified_by_user");
                     }
-                    bpnl.add(new JLabel("letzte Änderung " + von + " am " + df.format(Morphium.get().getValue(r, "modified"))));
+                    bpnl.add(new JLabel("letzte Änderung " + von + " am " + df.format(MorphiumSingleton.get().getValue(r, "modified"))));
                 } else {
                     bpnl.add(new JLabel("Neuer Datensatz"));
                 }
@@ -157,7 +158,7 @@ public class RecordEditDialog extends JDialog {
 
             public void actionPerformed(ActionEvent e) {
                 boolean isNew = false;
-                if (Morphium.get().getId(pnl.getRecord()) == null) {
+                if (MorphiumSingleton.get().getId(pnl.getRecord()) == null) {
                     isNew = true;
                 }
                 try {
@@ -176,7 +177,7 @@ public class RecordEditDialog extends JDialog {
                     return;
                 }
 
-                Morphium.get().store(pnl.getRecord());
+                MorphiumSingleton.get().store(pnl.getRecord());
 
 
                 dispose();

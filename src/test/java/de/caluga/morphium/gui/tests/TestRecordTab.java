@@ -8,6 +8,7 @@ import com.jgoodies.forms.factories.Borders;
 import de.caluga.morphium.MongoDbMode;
 import de.caluga.morphium.Morphium;
 import de.caluga.morphium.MorphiumConfig;
+import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.gui.recordtable.RecordTable;
 import de.caluga.morphium.gui.recordtable.RecordTableState;
 import de.caluga.morphium.secure.DefaultSecurityManager;
@@ -38,20 +39,20 @@ public class TestRecordTab extends JFrame {
         cfg.addAddress("localhost", 27017);
         cfg.setWriteCacheTimeout(100);
 
-        if (!Morphium.isConfigured()) {
-            Morphium.setConfig(cfg);
+        if (!MorphiumSingleton.isConfigured()) {
+            MorphiumSingleton.setConfig(cfg);
         }
 
-        Morphium.get();
-        Morphium.get().dropCollection(CachedObject.class);
-        Morphium.get().ensureIndex(CachedObject.class,"counter");
-        Morphium.get().ensureIndex(CachedObject.class,"value");
+        MorphiumSingleton.get();
+        MorphiumSingleton.get().dropCollection(CachedObject.class);
+        MorphiumSingleton.get().ensureIndex(CachedObject.class,"counter");
+        MorphiumSingleton.get().ensureIndex(CachedObject.class,"value");
 
         for (int i =0 ; i<100; i++) {
             CachedObject o=new CachedObject();
             o.setCounter(i);
             o.setValue("Counter: "+i);
-            Morphium.get().store(o);
+            MorphiumSingleton.get().store(o);
         }
 
         TestRecordTab t = new TestRecordTab();
@@ -67,7 +68,7 @@ public class TestRecordTab extends JFrame {
 
     private RecordTableState<CachedObject> getInitialState() {
         state = new RecordTableState<CachedObject>(CachedObject.class);
-        state.setFieldsToShow(Morphium.get().getFields(CachedObject.class));
+        state.setFieldsToShow(MorphiumSingleton.get().getFields(CachedObject.class));
         state.setSearchable(true);
         state.setPaging(true);
         state.setPageLength(50);

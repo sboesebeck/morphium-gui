@@ -5,6 +5,7 @@
 package de.caluga.morphium.gui.recordtable;
 
 import de.caluga.morphium.Morphium;
+import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.Query;
 import org.apache.log4j.Logger;
 import org.jdesktop.swingx.JXTable;
@@ -54,7 +55,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
         initialState = initial;
 
         if (initial.isPreCacheAll()) {
-            data = Morphium.get().find(initial.getSearch());
+            data = MorphiumSingleton.get().find(initial.getSearch());
             log.info("Got Elements: " + data.size());
         } else {
             data = new ArrayList<T>();
@@ -124,7 +125,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
         if (initialState.isPaging()) {
             search = search.skip(initialState.getCurrentPage() * initialState.getPageLength()).limit(initialState.getPageLength());
         }
-        data = Morphium.get().find(search);
+        data = MorphiumSingleton.get().find(search);
         fireTableDataChanged();
     }
 
@@ -204,7 +205,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
             }
         }
         try {
-            return Morphium.get().getValue(r, (String) initialState.getFieldsToShow().get(col));
+            return MorphiumSingleton.get().getValue(r, (String) initialState.getFieldsToShow().get(col));
         } catch (IllegalAccessException e) {
             log.fatal("Illegal Access for Value " + row + "," + col + " (" + initialState.getFieldsToShow().get(col) + " of object " + r.getClass().getSimpleName());
             return "ERR";
@@ -244,7 +245,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
             row--;
         }
         try {
-            Morphium.get().setValue(data.get(row), (String) initialState.getFieldsToShow().get(column), aValue);
+            MorphiumSingleton.get().setValue(data.get(row), (String) initialState.getFieldsToShow().get(column), aValue);
         } catch (IllegalAccessException e) {
             log.fatal("Error setting value",e);
         }
@@ -274,7 +275,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
     public Class getColumnClass(int columnIndex) {
         String fld = (String) initialState.getFieldsToShow().get(columnIndex);
 //        log.info("Returning " + Morphium.get().getTypeOfField(recordClass, fld).getName() + " for col " + columnIndex);
-        return Morphium.getTypeOfField(recordClass, fld);
+        return MorphiumSingleton.get().getTypeOfField(recordClass, fld);
     }
 
     private void clearSortingState() {

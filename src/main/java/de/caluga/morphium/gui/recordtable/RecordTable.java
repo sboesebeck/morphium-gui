@@ -11,6 +11,7 @@
 package de.caluga.morphium.gui.recordtable;
 
 import de.caluga.morphium.Morphium;
+import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.Query;
 import de.caluga.morphium.gui.recordedit.RecordEditDialog;
 import de.caluga.morphium.gui.recordtable.renderer.BooleanRenderer;
@@ -160,7 +161,7 @@ public class RecordTable<T> extends JPanel {
         delMi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Morphium.get().deleteObject(getSelectedRecord());
+                MorphiumSingleton.get().deleteObject(getSelectedRecord());
                 updateView();
             }
         });
@@ -182,9 +183,9 @@ public class RecordTable<T> extends JPanel {
             boolean del = false;
             try {
                 final T rec = type.newInstance();
-                update = !Morphium.get().accessDenied(rec, Permission.UPDATE);
-                insert = !Morphium.get().accessDenied(rec, Permission.INSERT);
-                del = !Morphium.get().accessDenied(rec, Permission.DELETE);
+                update = !MorphiumSingleton.get().accessDenied(rec, Permission.UPDATE);
+                insert = !MorphiumSingleton.get().accessDenied(rec, Permission.INSERT);
+                del = !MorphiumSingleton.get().accessDenied(rec, Permission.DELETE);
             } catch (InstantiationException ex) {
                 Logger.getLogger(RecordTable.class).fatal(ex);
             } catch (IllegalAccessException ex) {
@@ -253,7 +254,7 @@ public class RecordTable<T> extends JPanel {
             RecordEditDialog dlg = new RecordEditDialog(rec, "Neu anlegen");
             dlg.setVisible(true);
             if (dlg.isConfirmed()) {
-                log.info("Object stored with id " + Morphium.get().getId(rec));
+                log.info("Object stored with id " + MorphiumSingleton.get().getId(rec));
                 updateView();
             }
         } catch (InstantiationException ex) {
@@ -267,14 +268,14 @@ public class RecordTable<T> extends JPanel {
     public void deleteSelectedRecord() {
         int ret = JOptionPane.showConfirmDialog(this, "Den Eintrag wirklich löschen?", "Frage", JOptionPane.OK_CANCEL_OPTION);
         if (ret == JOptionPane.OK_OPTION) {
-            Morphium.get().deleteObject(getSelectedRecord());
+            MorphiumSingleton.get().deleteObject(getSelectedRecord());
             updateView();
         }
     }
 
     public void editSelectedRecord() {
         final T selectedRecord = getSelectedRecord();
-//        log.info("Editing: " + Morphium.get().getJsonString(selectedRecord));
+//        log.info("Editing: " + MorphiumSingleton.get().getJsonString(selectedRecord));
 
         RecordEditDialog dlg = new RecordEditDialog(selectedRecord, "Edit", false);
         dlg.setVisible(true);
@@ -403,7 +404,7 @@ public class RecordTable<T> extends JPanel {
 
     public Query getSearch() {
         if (state == null) return null;
-        if (!Morphium.isConfigured()) return null;
+        if (!MorphiumSingleton.isConfigured()) return null;
         return state.getSearch();
     }
 

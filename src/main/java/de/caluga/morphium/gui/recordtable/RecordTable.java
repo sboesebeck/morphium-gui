@@ -114,12 +114,20 @@ public class RecordTable<T> extends JPanel {
                     rtable.getSelectionModel().clearSelection();
                     rtable.getSelectionModel().addSelectionInterval(row, row);
                     if (getSelectedRecord() != null) {
+                        if (delMi!=null) {
                         delMi.setEnabled(true);
-                        editMi.setEnabled(true);
+                        }
+                        if (editMi!=null) {
+                            editMi.setEnabled(true);
+                        }
 
                     } else {
-                        delMi.setEnabled(false);
-                        editMi.setEnabled(false);
+                        if (delMi!=null) {
+                            delMi.setEnabled(false);
+                        }
+                        if (editMi!=null) {
+                            editMi.setEnabled(false);
+                        }
                     }
 //                    updateView();
                 } else {

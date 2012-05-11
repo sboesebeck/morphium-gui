@@ -23,7 +23,7 @@
     <orderEntry type="library" name="Maven: asm:asm:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" name="Maven: jgoodies:forms:1.0.5" level="project" />
-    <orderEntry type="library" name="Maven: de.caluga:morphium:1.1.15" level="project" />
+    <orderEntry type="library" name="Maven: de.caluga:morphium:1.1.16" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.swinglabs:swingx:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.jhlabs:filters:2.0.235" level="project" />

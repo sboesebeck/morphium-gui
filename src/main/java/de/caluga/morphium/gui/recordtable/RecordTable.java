@@ -18,6 +18,7 @@ import de.caluga.morphium.gui.recordtable.renderer.BooleanRenderer;
 import de.caluga.morphium.secure.MongoSecurityException;
 import de.caluga.morphium.secure.Permission;
 import org.apache.log4j.Logger;
+import org.bson.types.ObjectId;
 import org.jdesktop.swingx.decorator.HighlighterFactory;
 
 import javax.swing.*;
@@ -322,6 +323,30 @@ public class RecordTable<T> extends JPanel {
         return (model.getData().get(idx));
     }
 
+    public void setSelectedRecord(T rec) {
+        if (rec==null) return;
+        if (rtable == null) return;
+        if (rtable.getSelectionModel() == null) return;
+        if (state==null) return;
+        int offset=0;
+        if (state.isSearchable()) {
+            offset=+1;
+        }
+        ObjectId recId=MorphiumSingleton.get().getConfig().getMapper().getId(rec);
+        if (recId==null) {
+            //Sorry, cannot help yet
+            return;
+        }
+        for (int i=0;i<model.getData().size();i++) {
+
+            ObjectId id=MorphiumSingleton.get().getConfig().getMapper().getId(model.getData().get(i));
+            if (id==null) continue;
+            if (id.equals(recId)) {
+                rtable.getSelectionModel().setSelectionInterval(i+offset,i+offset);
+            }
+        }
+    }
+
     public List<String> getColumnHeader() {
         return state.getColumnHeader();
     }
@@ -484,8 +509,12 @@ public class RecordTable<T> extends JPanel {
 
 
         }
+        T r=getSelectedRecord();
         updatePopupMenu();
         model.updateModel();
+
+        setSelectedRecord(r);
+
 
     }
 

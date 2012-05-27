@@ -10,7 +10,6 @@
  */
 package de.caluga.morphium.gui.recordtable;
 
-import de.caluga.morphium.Morphium;
 import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.Query;
 import de.caluga.morphium.gui.recordedit.RecordEditDialog;
@@ -24,7 +23,6 @@ import org.jdesktop.swingx.decorator.HighlighterFactory;
 import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
-import javax.swing.text.LayeredHighlighter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,6 +47,7 @@ public class RecordTable<T> extends JPanel {
     private JMenuItem editMi;
     private JMenuItem delMi;
 
+//    private List<PropertyChangeListener> propertyChangeListeners;
 
     public RecordTable(Class<T> cls) {
         this(cls, new RecordTableState(cls));
@@ -67,12 +66,15 @@ public class RecordTable<T> extends JPanel {
      */
     public RecordTable(Class<T> cls, RecordTableState initialState) {
         super();
+
         state = initialState;
 
         pop = new JPopupMenu();
         initComponents();
         model = new RecordTableModel(cls, initialState);
         dcl = new ArrayList<DoubleClickListener>();
+//        propertyChangeListeners=new ArrayList<PropertyChangeListener>();
+
         type = cls;
         pageLengthComboBx.setSelectedItem(initialState.getPageLength());
         rtable.setModel(model);
@@ -84,7 +86,7 @@ public class RecordTable<T> extends JPanel {
 
         rtable.setComponentPopupMenu(pop);
         rtable.setDefaultRenderer(Boolean.class, new BooleanRenderer(state));
-        rtable.setDefaultEditor(Boolean.class,new BooleanRenderer(state));
+        rtable.setDefaultEditor(Boolean.class, new BooleanRenderer(state));
 //        rtable.setDefaultRenderer(String.class, new StringRenderer());
 //        rtable.setDefaultEditor(String.class, new StringRenderer());
 
@@ -115,18 +117,18 @@ public class RecordTable<T> extends JPanel {
                     rtable.getSelectionModel().clearSelection();
                     rtable.getSelectionModel().addSelectionInterval(row, row);
                     if (getSelectedRecord() != null) {
-                        if (delMi!=null) {
-                        delMi.setEnabled(true);
+                        if (delMi != null) {
+                            delMi.setEnabled(true);
                         }
-                        if (editMi!=null) {
+                        if (editMi != null) {
                             editMi.setEnabled(true);
                         }
 
                     } else {
-                        if (delMi!=null) {
+                        if (delMi != null) {
                             delMi.setEnabled(false);
                         }
-                        if (editMi!=null) {
+                        if (editMi != null) {
                             editMi.setEnabled(false);
                         }
                     }
@@ -154,6 +156,7 @@ public class RecordTable<T> extends JPanel {
                 int row = rtable.rowAtPoint(me.getPoint());
                 rtable.getSelectionModel().addSelectionInterval(row, row);
 //                updateView();
+                firePropertyChange("selectedRecord", null, getSelectedRecord());
             }
 
             @Override
@@ -183,6 +186,14 @@ public class RecordTable<T> extends JPanel {
     public void removeDoubleClickListener(DoubleClickListener dc) {
         dcl.remove(dc);
     }
+
+//    public void addPropertyChangeListener(PropertyChangeListener pcl) {
+//        propertyChangeListeners.add(pcl);
+//    }
+//
+//    public void removePropertyChangeListener(PropertyChangeListener pcl) {
+//        propertyChangeListeners.remove(pcl);
+//    }
 
     public void updatePopupMenu() throws MongoSecurityException {
         pop.removeAll();
@@ -216,7 +227,7 @@ public class RecordTable<T> extends JPanel {
             if (update) {
                 if (editMi == null) {
                     editMi = new JMenuItem("editieren");
-                    if (getSelectedRecord()==null) {
+                    if (getSelectedRecord() == null) {
                         editMi.setEnabled(false);
                     }
                     editMi.addActionListener(new ActionListener() {
@@ -231,8 +242,8 @@ public class RecordTable<T> extends JPanel {
             }
             if (del && state.isDeleteable()) {
                 if (delMi == null) {
-                    delMi=new JMenuItem("löschen");
-                    if (getSelectedRecord()==null) {
+                    delMi = new JMenuItem("löschen");
+                    if (getSelectedRecord() == null) {
                         delMi.setEnabled(false);
                     }
                     delMi.addActionListener(new ActionListener() {
@@ -247,7 +258,7 @@ public class RecordTable<T> extends JPanel {
             }
         }
         List<AbstractRecMenuItem> menuItemList = state.getMenuItemList();
-        for (AbstractRecMenuItem it: menuItemList) {
+        for (AbstractRecMenuItem it : menuItemList) {
             it.setEnabled(it.isEnabled(getSelectedRecord()));
             pop.add(it);
         }
@@ -301,7 +312,7 @@ public class RecordTable<T> extends JPanel {
     }
 
     public void setState(RecordTableState<T> st) {
-        state=st;
+        state = st;
     }
 
     public T getSelectedRecord() {
@@ -324,25 +335,30 @@ public class RecordTable<T> extends JPanel {
     }
 
     public void setSelectedRecord(T rec) {
-        if (rec==null) return;
+
         if (rtable == null) return;
         if (rtable.getSelectionModel() == null) return;
-        if (state==null) return;
-        int offset=0;
-        if (state.isSearchable()) {
-            offset=+1;
+        if (state == null) return;
+        if (rec == null) {
+            rtable.getSelectionModel().clearSelection();
+            return;
         }
-        ObjectId recId=MorphiumSingleton.get().getConfig().getMapper().getId(rec);
-        if (recId==null) {
+
+        int offset = 0;
+        if (state.isSearchable()) {
+            offset = +1;
+        }
+        ObjectId recId = MorphiumSingleton.get().getConfig().getMapper().getId(rec);
+        if (recId == null) {
             //Sorry, cannot help yet
             return;
         }
-        for (int i=0;i<model.getData().size();i++) {
+        for (int i = 0; i < model.getData().size(); i++) {
 
-            ObjectId id=MorphiumSingleton.get().getConfig().getMapper().getId(model.getData().get(i));
-            if (id==null) continue;
+            ObjectId id = MorphiumSingleton.get().getConfig().getMapper().getId(model.getData().get(i));
+            if (id == null) continue;
             if (id.equals(recId)) {
-                rtable.getSelectionModel().setSelectionInterval(i+offset,i+offset);
+                rtable.getSelectionModel().setSelectionInterval(i + offset, i + offset);
             }
         }
     }
@@ -356,7 +372,7 @@ public class RecordTable<T> extends JPanel {
     }
 
     public Map<String, RecordTableColumnTypes> getDisplayTypeForField() {
-        if (state==null) return null;
+        if (state == null) return null;
         return state.getDisplayTypeForField();
     }
 
@@ -365,7 +381,7 @@ public class RecordTable<T> extends JPanel {
     }
 
     public List<String> getFieldsToSearchFor() {
-        if (state==null) return new ArrayList<String>();
+        if (state == null) return new ArrayList<String>();
         return state.getFieldsToSearchFor();
     }
 
@@ -374,7 +390,7 @@ public class RecordTable<T> extends JPanel {
     }
 
     public List<String> getFieldsToShow() {
-        if (state==null) return new ArrayList<String>();
+        if (state == null) return new ArrayList<String>();
         return state.getFieldsToShow();
     }
 
@@ -383,7 +399,7 @@ public class RecordTable<T> extends JPanel {
     }
 
     public Query getInitialSearch() {
-        if (state==null) return null;
+        if (state == null) return null;
         return state.getInitialSearch();
     }
 
@@ -509,7 +525,7 @@ public class RecordTable<T> extends JPanel {
 
 
         }
-        T r=getSelectedRecord();
+        T r = getSelectedRecord();
         updatePopupMenu();
         model.updateModel();
 

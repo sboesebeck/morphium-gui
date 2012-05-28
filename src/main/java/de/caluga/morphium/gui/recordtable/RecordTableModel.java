@@ -4,7 +4,6 @@
  */
 package de.caluga.morphium.gui.recordtable;
 
-import de.caluga.morphium.Morphium;
 import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.Query;
 import org.apache.log4j.Logger;
@@ -56,7 +55,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
 
         if (initial.isPreCacheAll()) {
             data = MorphiumSingleton.get().find(initial.getSearch());
-            log.info("Got Elements: " + data.size());
+            if (log.isDebugEnabled()) log.debug("Got Elements: " + data.size());
         } else {
             data = new ArrayList<T>();
         }
@@ -150,13 +149,13 @@ public class RecordTableModel<T> extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        log.info("Showing " + initialState.getFieldsToShow().size());
+        if (log.isDebugEnabled()) log.debug("Showing " + initialState.getFieldsToShow().size());
         return initialState.getFieldsToShow().size();
     }
 
     @Override
     public String getColumnName(int column) {
-        log.info("Columname " + column + " = " + initialState.getColumnName(column));
+        if (log.isDebugEnabled()) log.debug("Columname " + column + " = " + initialState.getColumnName(column));
         return initialState.getColumnName(column);
     }
 
@@ -174,7 +173,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
             if (row == 0) {
                 if (initialState.isSearchable(col)) {
                     if ((initialState.getSearchValues().get((String) initialState.getFieldsToShow().get(col))) == null) {
-//                        log.info("Search value for " + ((String) initialState.getFieldsToShow().get(col)) + " is null");
+//                        if (log.isDebugEnabled()) log.debug("Search value for " + ((String) initialState.getFieldsToShow().get(col)) + " is null");
 
                         return null;
                     }
@@ -193,13 +192,13 @@ public class RecordTableModel<T> extends AbstractTableModel {
         T r = data.get(row);
         if (rendererMap != null) {
             if (rendererMap.get(initialState.getFieldsToShow().get(col)) != null) {
-                log.debug("Found renderer");
+                if (log.isDebugEnabled()) log.debug("Found renderer");
                 return rendererMap.get(initialState.getFieldsToShow().get(col)).renderValueFor((String) initialState.getFieldsToShow().get(col), r);
             }
             for (String fld : rendererMap.keySet()) {
                 Pattern p = Pattern.compile(fld);
                 if (p.matcher((String) initialState.getFieldsToShow().get(col)).matches()) {
-                    log.debug("Found renderer with RegEx");
+                    if (log.isDebugEnabled()) log.debug("Found renderer with RegEx");
                     return rendererMap.get(initialState.getFieldsToShow().get(col)).renderValueFor((String) initialState.getFieldsToShow().get(col), r);
                 }
             }
@@ -216,7 +215,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
     public boolean isCellEditable(int row, int column) {
         if (isSearchable()) {
             if (row == 0) {
-                log.info("Returning true for row " + row + " and col " + column);
+                if (log.isDebugEnabled()) log.debug("Returning true for row " + row + " and col " + column);
                 return true;
             }
             row--;
@@ -236,7 +235,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
                     //do nothing
                 } else {
                     String fldName = (String) initialState.getFieldsToShow().get(column);
-                    initialState.addSearchValue(fldName,txt);
+                    initialState.addSearchValue(fldName, txt);
                 }
                 updateModel();
                 fireTableDataChanged();
@@ -247,7 +246,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
         try {
             MorphiumSingleton.get().setValue(data.get(row), (String) initialState.getFieldsToShow().get(column), aValue);
         } catch (IllegalAccessException e) {
-            log.fatal("Error setting value",e);
+            log.fatal("Error setting value", e);
         }
     }
 
@@ -274,7 +273,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
     @Override
     public Class getColumnClass(int columnIndex) {
         String fld = (String) initialState.getFieldsToShow().get(columnIndex);
-//        log.info("Returning " + Morphium.get().getTypeOfField(recordClass, fld).getName() + " for col " + columnIndex);
+//        if (log.isDebugEnabled()) log.debug("Returning " + Morphium.get().getTypeOfField(recordClass, fld).getName() + " for col " + columnIndex);
         return MorphiumSingleton.get().getTypeOfField(recordClass, fld);
     }
 

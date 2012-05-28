@@ -118,7 +118,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
         Query search = initialState.getSearch();
         if (sorting != null) {
             if (sorting.size() != 0) {
-                search = search.order(getOrderString());
+                search = search.sort(getOrderString());
             }
         }
         if (initialState.isPaging()) {

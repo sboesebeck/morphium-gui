@@ -5,7 +5,6 @@
  */
 package de.caluga.morphium.gui.recordedit;
 
-import de.caluga.morphium.Morphium;
 import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.gui.PanelClass;
 import org.apache.log4j.Logger;
@@ -46,7 +45,7 @@ public class RecordEditDialog extends JDialog {
     }
 
     public RecordEditDialog(Object r, String title, boolean viewOnly) {
-        ObjectId id= MorphiumSingleton.get().getId(r);
+        ObjectId id = MorphiumSingleton.get().getId(r);
 
         okBtn = new JButton(RecordEditPanel.STATUS_OK.toString());
         cancelBtn = new JButton(RecordEditPanel.STATUS_CANCEL.toString());
@@ -58,7 +57,7 @@ public class RecordEditDialog extends JDialog {
         setModal(true);
 
 
-        if (r==null) {
+        if (r == null) {
             throw new IllegalArgumentException("Object is null???");
         }
 
@@ -89,7 +88,7 @@ public class RecordEditDialog extends JDialog {
             }
             pack = pack + ".gui";
             pnlClass = pack + "." + clsName + "Panel";
-            log.info("Trying to instanciate " + pnlClass);
+            if (log.isDebugEnabled()) log.debug("Trying to instanciate " + pnlClass);
             try {
                 pnl = (RecordEditPanel) Class.forName(pnlClass).newInstance();
 

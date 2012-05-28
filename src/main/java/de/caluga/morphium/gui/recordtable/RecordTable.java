@@ -107,7 +107,8 @@ public class RecordTable<T> extends JPanel {
             @Override
             public void mouseClicked(MouseEvent me) {
                 if (SwingUtilities.isRightMouseButton(me)) {
-                    log.info("Right mousebutton pressed!");
+                    if (log.isDebugEnabled())
+                        log.debug("Right mousebutton pressed!");
                     if (!pop.isShowing()) {
 
                         pop.setLocation(me.getXOnScreen(), me.getYOnScreen());
@@ -134,7 +135,8 @@ public class RecordTable<T> extends JPanel {
                     }
 //                    updateView();
                 } else {
-                    log.info("Fire doublclick event");
+                    if (log.isDebugEnabled())
+                        log.debug("Fire doublclick event");
                     final T selectedRecord = getSelectedRecord();
                     if (selectedRecord != null) {
                         for (DoubleClickListener dc : dcl) {
@@ -275,7 +277,8 @@ public class RecordTable<T> extends JPanel {
             RecordEditDialog dlg = new RecordEditDialog(rec, "Neu anlegen");
             dlg.setVisible(true);
             if (dlg.isConfirmed()) {
-                log.info("Object stored with id " + MorphiumSingleton.get().getId(rec));
+                if (log.isDebugEnabled())
+                    log.debug("Object stored with id " + MorphiumSingleton.get().getId(rec));
                 updateView();
             }
         } catch (InstantiationException ex) {
@@ -301,7 +304,8 @@ public class RecordTable<T> extends JPanel {
         RecordEditDialog dlg = new RecordEditDialog(selectedRecord, "Edit", false);
         dlg.setVisible(true);
         if (dlg.isConfirmed()) {
-            log.info("Stored successful...");
+            if (log.isDebugEnabled())
+                log.debug("Stored successful...");
             updateView();
         }
 
@@ -328,7 +332,7 @@ public class RecordTable<T> extends JPanel {
         if (idx < 0) {
             return null;
         }
-        log.info("Returning index " + idx);
+        if (log.isDebugEnabled()) log.debug("Returning index " + idx);
         if (model == null) return null;
         if (model.getData() == null) return null;
         return (model.getData().get(idx));

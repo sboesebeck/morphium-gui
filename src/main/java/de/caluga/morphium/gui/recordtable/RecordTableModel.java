@@ -79,6 +79,9 @@ public class RecordTableModel<T> extends AbstractTableModel {
         return initialState.getSearch().countAll();
     }
 
+    public void setState(RecordTableState<T> state) {
+        initialState = state;
+    }
 
     public JXTable getTable() {
         return table;

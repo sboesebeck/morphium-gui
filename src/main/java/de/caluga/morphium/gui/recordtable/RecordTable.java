@@ -317,6 +317,7 @@ public class RecordTable<T> extends JPanel {
 
     public void setState(RecordTableState<T> st) {
         state = st;
+        model.setState(st);
     }
 
     public T getSelectedRecord() {

@@ -4,16 +4,12 @@
  */
 package de.caluga.morphium.gui.recordtable;
 
-import de.caluga.morphium.Morphium;
 import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.Query;
 import org.apache.log4j.Logger;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 
 /**
@@ -125,7 +121,7 @@ public class RecordTableState<T> {
             this.searchValues = new HashMap<String, String>();
 
         }
-        this.searchValues.put(field,value);
+        this.searchValues.put(field, value);
     }
 
     public void setSearchValues(Map<String, String> searchValues) {
@@ -184,11 +180,11 @@ public class RecordTableState<T> {
                             ret.f(s).eq(txt);
                         }
                     } else if (fldType.equals(Long.class) || fldType.equals(long.class)) {
-                        addNumberQueryFor(ret,fldName,txt,Long.valueOf(txt.replaceAll("[!=<>]","")));
+                        addNumberQueryFor(ret, fldName, txt, Long.valueOf(txt.replaceAll("[!=<>]", "")));
                     } else if (fldType.equals(Integer.class) || fldType.equals(int.class)) {
-                       addNumberQueryFor(ret,fldName,txt,Integer.valueOf(txt.replaceAll("[!=<>]","")));
+                        addNumberQueryFor(ret, fldName, txt, Integer.valueOf(txt.replaceAll("[!=<>]", "")));
                     } else if (fldType.equals(Double.class) || fldType.equals(double.class)) {
-                        addNumberQueryFor(ret,fldName,txt,Integer.valueOf(txt.replaceAll("[!=<>]","")));
+                        addNumberQueryFor(ret, fldName, txt, Integer.valueOf(txt.replaceAll("[!=<>]", "")));
                     } else if (fldType.equals(Boolean.class) || fldType.equals(boolean.class)) {
                         if (txt.equals("true")) {
                             ret.f(fldName).eq(true);
@@ -223,7 +219,6 @@ public class RecordTableState<T> {
             ret.f(fldName).eq(value);
         }
     }
-
 
 
     public boolean isEditable() {
@@ -328,6 +323,18 @@ public class RecordTableState<T> {
 
     public void setFieldsToShow(List<String> fieldsToShow) {
         this.fieldsToShow = fieldsToShow;
+    }
+
+    public void setFieldsToShow(String... flds) {
+        setFieldsToShow(Arrays.asList(flds));
+    }
+
+    public void setFieldsToShow(Enum... flds) {
+        List<String> flst = new ArrayList<String>();
+        for (Enum e : flds) {
+            flst.add(e.name());
+        }
+        setFieldsToShow(flst);
     }
 
     public Query<T> getInitialSearch() {

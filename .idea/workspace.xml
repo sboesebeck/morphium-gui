@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c597ca1-0542-4734-937b-a5be70757f6a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_caluga_morphium_1_3_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_caluga_morphium_1_3_16.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MorphiumGUI.iml" afterPath="$PROJECT_DIR$/MorphiumGUI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java" afterPath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" afterPath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java" afterPath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java" afterPath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java" />
     </list>
     <ignored path="MorphiumGUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,24 +62,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RecordEditDialog.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="182" selection-start="5810" selection-end="5810" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Morphium.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/de/caluga/morphium/1.3.14/morphium-1.3.14-sources.jar!/de/caluga/morphium/Morphium.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1215" column="19" selection-start="44582" selection-end="44582" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,18 +74,18 @@
       <file leaf-file-name="RecordTable.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="320" column="42" selection-start="11205" selection-end="11205" vertical-scroll-proportion="0.0">
+            <state line="394" column="34" selection-start="13516" selection-end="13516" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordTableState.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RecordTableState.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="316" column="0" selection-start="9477" selection-end="9477" vertical-scroll-proportion="0.26174498">
+            <state line="309" column="24" selection-start="9239" selection-end="9239" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#10505#10513#0" expanded="true" />
+                <element signature="e#10508#10516#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,6 +133,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="RecordTableModel.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="282" column="28" selection-start="9919" selection-end="9919" vertical-scroll-proportion="0.41770715">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Category.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.16/log4j-1.2.16-sources.jar!/org/apache/log4j/Category.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="255" column="7" selection-start="8634" selection-end="8634" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CachedObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObject.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -189,11 +185,11 @@
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/AbstractRecMenuItem.java" />
         <option value="$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/TestRecordTab.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/ColumnDataRenderer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java" />
       </list>
     </option>
   </component>
@@ -776,12 +772,16 @@
       <created>1338676036584</created>
       <updated>1338676036584</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="small updates">
+      <created>1339072210808</created>
+      <updated>1339072210808</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -791,16 +791,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662192" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.5704698" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.12751678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.12751678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24463007" sideWeight="0.70320654" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29679343" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662192" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -842,7 +842,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="api changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small updates" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -863,6 +863,7 @@
     <MESSAGE value="new version of morphium" />
     <MESSAGE value="new version of morphium - small bugfix" />
     <MESSAGE value="api changes" />
+    <MESSAGE value="small updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -872,11 +873,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/PanelClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/checkstyle.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="23" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" />
@@ -897,14 +893,9 @@
         <state line="8145" column="19" selection-start="302729" selection-end="302729" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="29" selection-start="2495" selection-end="2495" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="182" selection-start="5810" selection-end="5810" vertical-scroll-proportion="0.0">
+        <state line="145" column="182" selection-start="5812" selection-end="5812" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -912,16 +903,6 @@
     <entry file="jar://$MAVEN_REPOSITORY$/de/caluga/morphium/1.3.14/morphium-1.3.14-sources.jar!/de/caluga/morphium/Morphium.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1215" column="19" selection-start="44582" selection-end="44582" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="42" selection-start="11205" selection-end="11205" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/ColumnDataRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="52" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/TestRecordTab.java">
@@ -932,11 +913,6 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/TestObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObjectPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObject.java">
@@ -951,12 +927,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="394" column="34" selection-start="13516" selection-end="13516" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObjectPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="40" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1334491896000" expanded="false" signature="887:2635" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1334491896000" expanded="false" signature="2647:2944" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.16/log4j-1.2.16-sources.jar!/org/apache/log4j/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="255" column="7" selection-start="8634" selection-end="8634" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="316" column="0" selection-start="9477" selection-end="9477" vertical-scroll-proportion="0.26174498">
+        <state line="309" column="24" selection-start="9239" selection-end="9239" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#10505#10513#0" expanded="true" />
+            <element signature="e#10508#10516#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/ColumnDataRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="52" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="282" column="28" selection-start="9919" selection-end="9919" vertical-scroll-proportion="0.41770715">
+          <folding />
         </state>
       </provider>
     </entry>

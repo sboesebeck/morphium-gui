@@ -219,7 +219,8 @@ public class RecordTableModel<T> extends AbstractTableModel {
         if (isSearchable()) {
             if (row == 0) {
                 if (log.isDebugEnabled()) log.debug("Returning true for row " + row + " and col " + column);
-                return true;
+                String col = (String) initialState.getFieldsToShow().get(column);
+                return (initialState.getSearchableFields().contains(col));
             }
             row--;
         }
@@ -275,9 +276,11 @@ public class RecordTableModel<T> extends AbstractTableModel {
 
     @Override
     public Class getColumnClass(int columnIndex) {
-        String fld = (String) initialState.getFieldsToShow().get(columnIndex);
+
+//        String fld = (String) initialState.getFieldsToShow().get(columnIndex);
 //        if (log.isDebugEnabled()) log.debug("Returning " + Morphium.get().getTypeOfField(recordClass, fld).getName() + " for col " + columnIndex);
-        return MorphiumSingleton.get().getTypeOfField(recordClass, fld);
+//        return MorphiumSingleton.get().getTypeOfField(recordClass, fld);
+        return String.class;
     }
 
     private void clearSortingState() {

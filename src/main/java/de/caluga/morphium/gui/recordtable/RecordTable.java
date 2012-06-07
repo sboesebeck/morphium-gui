@@ -388,11 +388,11 @@ public class RecordTable<T> extends JPanel {
 
     public List<String> getFieldsToSearchFor() {
         if (state == null) return new ArrayList<String>();
-        return state.getFieldsToSearchFor();
+        return state.getSearchableFields();
     }
 
     public void setFieldsToSearchFor(List<String> fieldsToSearchFor) {
-        state.setFieldsToSearchFor(fieldsToSearchFor);
+        state.setSearchableFields(fieldsToSearchFor);
     }
 
     public List<String> getFieldsToShow() {

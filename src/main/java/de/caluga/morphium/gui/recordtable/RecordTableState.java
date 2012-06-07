@@ -20,7 +20,6 @@ public class RecordTableState<T> {
     private List<String> fieldsToShow;
     private List<String> columnHeader;
     private Query<T> initialSearch;
-    private List<String> fieldsToSearchFor; //in template!
 
     //fields that can be searched
     private List<String> searchableFields;
@@ -292,6 +291,10 @@ public class RecordTableState<T> {
         return columnHeader;
     }
 
+    public void setColumnHeader(String... hdr) {
+        setColumnHeader(Arrays.asList(hdr));
+    }
+
     public void setColumnHeader(List<String> columnHeader) {
         this.columnHeader = columnHeader;
     }
@@ -302,14 +305,6 @@ public class RecordTableState<T> {
 
     public void setDisplayTypeForField(Map<String, RecordTableColumnTypes> displayTypeForField) {
         this.displayTypeForField = displayTypeForField;
-    }
-
-    public List<String> getFieldsToSearchFor() {
-        return fieldsToSearchFor;
-    }
-
-    public void setFieldsToSearchFor(List<String> fieldsToSearchFor) {
-        this.fieldsToSearchFor = fieldsToSearchFor;
     }
 
     public List<String> getFieldsToShow() {
@@ -351,6 +346,18 @@ public class RecordTableState<T> {
 
     public void setSearchableFields(List<String> searchableFields) {
         this.searchableFields = searchableFields;
+    }
+
+    public void setSearchableFields(String... flds) {
+        setSearchableFields(Arrays.asList(flds));
+    }
+
+    public void setSearchableFields(Enum... flds) {
+        List<String> lst = new ArrayList<String>();
+        for (Enum e : flds) {
+            lst.add(e.name());
+        }
+        setSearchableFields(lst);
     }
 
 

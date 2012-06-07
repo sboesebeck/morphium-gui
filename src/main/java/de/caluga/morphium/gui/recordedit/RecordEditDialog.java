@@ -135,21 +135,29 @@ public class RecordEditDialog extends JDialog {
 
         List<String> flds = MorphiumSingleton.get().getFields(cls);
 
-        if (flds.contains("modified")) {
+
+        if (MorphiumSingleton.get().storesLastChange(r.getClass())) {
             try {
-                if (MorphiumSingleton.get().getValue(r, "modified") != null) {
+                if (MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeField(r.getClass())) != null) {
                     String von = "";
-                    if (flds.contains("modified_by_user")) {
-                        von = "von " + (String) MorphiumSingleton.get().getValue(r, "modified_by_user");
+                    if (MorphiumSingleton.get().getLastChangeByField(r.getClass()) != null) {
+                        von = "von " + (String) MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeByField(r.getClass()));
                     }
-                    bpnl.add(new JLabel("letzte Änderung " + von + " am " + df.format(MorphiumSingleton.get().getValue(r, "modified"))));
+                    bpnl.add(new JLabel("letzte Änderung " + von + " am " + df.format(MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeField(r.getClass())))));
                 } else {
-                    bpnl.add(new JLabel("Neuer Datensatz"));
+                    bpnl.add(new JLabel(" Neuer Datensatz"));
                 }
             } catch (IllegalAccessException e) {
                 log.error("Illegal Access!");
             }
+        } else {
+            if (MorphiumSingleton.get().getId(r) == null) {
+                bpnl.add(new JLabel("neuer Datensatz"));
+            } else {
+                bpnl.add(new JLabel("Daten ändern"));
+            }
         }
+
         bpnl.add(okBtn);
         bpnl.add(cancelBtn);
         getContentPane().add(bpnl, BorderLayout.SOUTH);

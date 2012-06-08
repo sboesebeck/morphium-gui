@@ -154,7 +154,11 @@ public class RecordEditDialog extends JDialog {
             if (MorphiumSingleton.get().getId(r) == null) {
                 bpnl.add(new JLabel("neuer Datensatz"));
             } else {
-                bpnl.add(new JLabel("Daten ändern"));
+                if (viewOnly) {
+                    bpnl.add(new JLabel("Detailansicht"));
+                } else {
+                    bpnl.add(new JLabel("Daten ändern"));
+                }
             }
         }
 

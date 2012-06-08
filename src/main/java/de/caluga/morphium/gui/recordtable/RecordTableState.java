@@ -69,6 +69,10 @@ public class RecordTableState<T> {
         menuItemList.remove(mi);
     }
 
+    public void addRendererForField(Enum fld, ColumnDataRenderer rd) {
+        addRendererForField(fld.name(), rd);
+    }
+
     /**
      * @param fld - may also be a regular Expression!!!
      * @param rd  - the renderer

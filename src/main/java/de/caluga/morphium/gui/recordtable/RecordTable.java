@@ -315,11 +315,11 @@ public class RecordTable<T> extends JPanel {
         return state;
     }
 
-    public void setState(RecordTableState<T> st) {
-        state = st;
-        model.setState(st);
-        model.fireTableStructureChanged();
-    }
+//    public void setState(RecordTableState<T> st) {
+//        state = st;
+//        model.setState(st);
+//        model.fireTableStructureChanged();
+//    }
 
     public T getSelectedRecord() {
         if (rtable == null) return null;

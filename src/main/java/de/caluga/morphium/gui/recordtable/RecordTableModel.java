@@ -276,11 +276,11 @@ public class RecordTableModel<T> extends AbstractTableModel {
 
     @Override
     public Class getColumnClass(int columnIndex) {
-
-//        String fld = (String) initialState.getFieldsToShow().get(columnIndex);
+        if (initialState.isSearchable()) return String.class;
+        String fld = (String) initialState.getFieldsToShow().get(columnIndex);
 //        if (log.isDebugEnabled()) log.debug("Returning " + Morphium.get().getTypeOfField(recordClass, fld).getName() + " for col " + columnIndex);
-//        return MorphiumSingleton.get().getTypeOfField(recordClass, fld);
-        return String.class;
+        return MorphiumSingleton.get().getTypeOfField(recordClass, fld);
+//        return String.class;
     }
 
     private void clearSortingState() {

@@ -4,7 +4,6 @@
     <list default="true" id="1c597ca1-0542-4734-937b-a5be70757f6a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" afterPath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java" afterPath="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java" />
     </list>
     <ignored path="MorphiumGUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,23 +70,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordTable.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RecordTable.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="309" column="9" selection-start="10975" selection-end="10975" vertical-scroll-proportion="0.0">
+            <state line="93" column="86" selection-start="2983" selection-end="2983" vertical-scroll-proportion="0.2553916">
               <folding>
+                <element signature="e#0#27643#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#6835#7065#0" expanded="true" />
+                <element signature="e#7054#7055#0" expanded="true" />
+                <element signature="e#8515#8731#0" expanded="true" />
+                <element signature="e#8708#8709#0" expanded="true" />
+                <element signature="e#9091#9316#0" expanded="true" />
+                <element signature="e#9293#9294#0" expanded="true" />
+                <element signature="e#9692#9919#0" expanded="true" />
+                <element signature="e#9896#9897#0" expanded="true" />
+                <element signature="e#19988#20018#0" expanded="true" />
+                <element signature="e#21005#21156#0" expanded="true" />
+                <element signature="e#21145#21146#0" expanded="true" />
+                <element signature="e#21266#21416#0" expanded="true" />
+                <element signature="e#21405#21406#0" expanded="true" />
+                <element signature="e#21586#21736#0" expanded="true" />
+                <element signature="e#21725#21726#0" expanded="true" />
+                <element signature="e#21804#21954#0" expanded="true" />
+                <element signature="e#21943#21944#0" expanded="true" />
+                <element signature="e#22181#22341#0" expanded="true" />
+                <element signature="e#22330#22331#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordTableState.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RecordTableState.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="32" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.35011184">
+            <state line="72" column="32" selection-start="1925" selection-end="1925" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#10628#10636#0" expanded="true" />
+                <element signature="e#10631#10639#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,15 +169,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CachedObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="31" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -187,8 +197,8 @@
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/PanelClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
       </list>
     </option>
   </component>
@@ -679,6 +689,11 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="StructureViewFactory">
     <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
     <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR" />
@@ -787,12 +802,16 @@
       <created>1339170058749</created>
       <updated>1339170058749</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="bugfix">
+      <created>1339179909966</created>
+      <updated>1339179909967</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -805,7 +824,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662192" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.5704698" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.12751678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.12751678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24463007" sideWeight="0.70320654" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29679343" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -895,11 +914,6 @@
         <state line="764" column="0" selection-start="25678" selection-end="25678" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../JDK-Src/Macintosh HD 2/j2se/src/share/classes/java/awt/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8145" column="19" selection-start="302729" selection-end="302729" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/de/caluga/morphium/1.3.14/morphium-1.3.14-sources.jar!/de/caluga/morphium/Morphium.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1215" column="19" selection-start="44582" selection-end="44582" vertical-scroll-proportion="0.0" />
@@ -970,20 +984,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="309" column="9" selection-start="10975" selection-end="10975" vertical-scroll-proportion="0.0">
+        <state line="72" column="32" selection-start="1925" selection-end="1925" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#10631#10639#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java">
+    <entry file="file://$PROJECT_DIR$/../../JDK-Src/Macintosh HD 2/j2se/src/share/classes/java/awt/Component.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="32" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.35011184">
+        <state line="8121" column="19" selection-start="301759" selection-end="301759" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="86" selection-start="2983" selection-end="2983" vertical-scroll-proportion="0.2553916">
           <folding>
-            <element signature="e#10628#10636#0" expanded="true" />
+            <element signature="e#0#27643#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#6835#7065#0" expanded="true" />
+            <element signature="e#7054#7055#0" expanded="true" />
+            <element signature="e#8515#8731#0" expanded="true" />
+            <element signature="e#8708#8709#0" expanded="true" />
+            <element signature="e#9091#9316#0" expanded="true" />
+            <element signature="e#9293#9294#0" expanded="true" />
+            <element signature="e#9692#9919#0" expanded="true" />
+            <element signature="e#9896#9897#0" expanded="true" />
+            <element signature="e#19988#20018#0" expanded="true" />
+            <element signature="e#21005#21156#0" expanded="true" />
+            <element signature="e#21145#21146#0" expanded="true" />
+            <element signature="e#21266#21416#0" expanded="true" />
+            <element signature="e#21405#21406#0" expanded="true" />
+            <element signature="e#21586#21736#0" expanded="true" />
+            <element signature="e#21725#21726#0" expanded="true" />
+            <element signature="e#21804#21954#0" expanded="true" />
+            <element signature="e#21943#21944#0" expanded="true" />
+            <element signature="e#22181#22341#0" expanded="true" />
+            <element signature="e#22330#22331#0" expanded="true" />
           </folding>
         </state>
       </provider>

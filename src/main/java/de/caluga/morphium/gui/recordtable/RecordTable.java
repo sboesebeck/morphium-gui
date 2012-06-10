@@ -24,10 +24,7 @@ import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +43,7 @@ public class RecordTable<T> extends JPanel {
     private JMenuItem newMi;
     private JMenuItem editMi;
     private JMenuItem delMi;
+    private boolean enabled = true;
 
 //    private List<PropertyChangeListener> propertyChangeListeners;
 
@@ -99,6 +97,23 @@ public class RecordTable<T> extends JPanel {
 //       rtable.setDefaultRenderer(List.class,new ListRenderer());
 //       rtable.setDefaultRenderer(Map.class,new MapRenderer());
 
+
+        rtable.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_UP ||
+                        e.getKeyCode() == KeyEvent.VK_KP_UP ||
+                        e.getKeyCode() == KeyEvent.VK_KP_DOWN ||
+                        e.getKeyCode() == KeyEvent.VK_DOWN ||
+                        e.getKeyCode() == KeyEvent.VK_ENTER
+                        ) {
+                    firePropertyChange("selectedRecord", null, getSelectedRecord());
+                } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    setSelectedRecord(null);
+                }
+            }
+        });
+
         model.setRendererMap(state.getRendererMap());
 
         updatePopupMenu();
@@ -106,7 +121,8 @@ public class RecordTable<T> extends JPanel {
 
             @Override
             public void mouseClicked(MouseEvent me) {
-                if (SwingUtilities.isRightMouseButton(me)) {
+                if (!enabled) return;
+                if (me.getButton() == 3 || (me.getButton() == 1 && (me.getModifiers() & MouseEvent.CTRL_MASK) != 0)) {
                     if (log.isDebugEnabled())
                         log.debug("Right mousebutton pressed!");
                     if (!pop.isShowing()) {
@@ -134,7 +150,7 @@ public class RecordTable<T> extends JPanel {
                         }
                     }
 //                    updateView();
-                } else {
+                } else if (me.getClickCount() == 2) {
                     if (log.isDebugEnabled())
                         log.debug("Fire doublclick event");
                     final T selectedRecord = getSelectedRecord();
@@ -148,15 +164,15 @@ public class RecordTable<T> extends JPanel {
 
             @Override
             public void mousePressed(MouseEvent me) {
-                int row = rtable.rowAtPoint(me.getPoint());
-                rtable.getSelectionModel().addSelectionInterval(row, row);
+//                int row = rtable.rowAtPoint(me.getPoint());
+//                rtable.getSelectionModel().addSelectionInterval(row, row);
 //                updateView();
             }
 
             @Override
             public void mouseReleased(MouseEvent me) {
-                int row = rtable.rowAtPoint(me.getPoint());
-                rtable.getSelectionModel().addSelectionInterval(row, row);
+//                int row = rtable.rowAtPoint(me.getPoint());
+//                rtable.getSelectionModel().addSelectionInterval(row, row);
 //                updateView();
                 firePropertyChange("selectedRecord", null, getSelectedRecord());
             }
@@ -199,6 +215,7 @@ public class RecordTable<T> extends JPanel {
 
     public void updatePopupMenu() throws MongoSecurityException {
         pop.removeAll();
+        if (!enabled) return;
         if (state.isEditable()) {
             boolean update = false;
             boolean insert = false;
@@ -321,12 +338,16 @@ public class RecordTable<T> extends JPanel {
 //        model.fireTableStructureChanged();
 //    }
 
+    public void setEnabled(boolean enabled) {
+        rtable.setEnabled(enabled);
+        this.enabled = enabled;
+
+
+    }
+
     public T getSelectedRecord() {
         if (rtable == null) return null;
-        if (rtable.getSelectionModel() == null) return null;
-        int idx = rtable.getSelectionModel().getMinSelectionIndex();
-
-        if (state == null) return null;
+        int idx = rtable.getSelectedRow();
 
         if (state.isSearchable()) {
             idx--;
@@ -334,10 +355,61 @@ public class RecordTable<T> extends JPanel {
         if (idx < 0) {
             return null;
         }
-        if (log.isDebugEnabled()) log.debug("Returning index " + idx);
         if (model == null) return null;
         if (model.getData() == null) return null;
         return (model.getData().get(idx));
+    }
+
+
+    public List<T> getSelectedRecords() {
+        ArrayList<T> ret = new ArrayList<T>();
+        if (rtable == null) return ret;
+        if (model == null) return ret;
+        if (model.getData() == null) return null;
+        int[] rows = rtable.getSelectedRows();
+        for (int idx : rows) {
+            if (state.isSearchable()) {
+                idx--;
+            }
+            ret.add(model.getData().get(idx));
+        }
+
+        return ret;
+    }
+
+    public void setSelectionMode(int selMode) {
+        rtable.setSelectionMode(selMode);
+    }
+
+    public void setSelectedRecords(List<T> recs) {
+        if (rtable == null) return;
+        if (rtable.getSelectionModel() == null) return;
+        rtable.getSelectionModel().clearSelection();
+        if (state == null) return;
+        if (recs == null || recs.size() == 0) {
+
+            return;
+        }
+        for (T rec : recs) {
+            int offset = 0;
+            if (state.isSearchable()) {
+                offset = +1;
+            }
+            ObjectId recId = MorphiumSingleton.get().getConfig().getMapper().getId(rec);
+            if (recId == null) {
+                //Sorry, cannot help yet
+                return;
+            }
+            for (int i = 0; i < model.getData().size(); i++) {
+
+                ObjectId id = MorphiumSingleton.get().getConfig().getMapper().getId(model.getData().get(i));
+                if (id == null) continue;
+                if (id.equals(recId)) {
+                    rtable.getSelectionModel().addSelectionInterval(i + offset, i + offset);
+                }
+            }
+        }
+
     }
 
     public void setSelectedRecord(T rec) {

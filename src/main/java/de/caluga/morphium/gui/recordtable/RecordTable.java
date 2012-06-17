@@ -18,6 +18,7 @@ import de.caluga.morphium.secure.MongoSecurityException;
 import de.caluga.morphium.secure.Permission;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
+import org.jdesktop.swingx.JXTable;
 import org.jdesktop.swingx.decorator.HighlighterFactory;
 
 import javax.swing.*;
@@ -57,6 +58,33 @@ public class RecordTable<T> extends JPanel {
 
     public void setDefaultEditor(Class cls, TableCellEditor ed) {
         rtable.setDefaultEditor(cls, ed);
+    }
+
+    public JXTable getTable() {
+        return rtable;
+    }
+
+    public void setForeground(Color fg) {
+        super.setForeground(fg);
+        if (rtable != null) {
+            rtable.setForeground(fg);
+        }
+    }
+
+    public void setBackground(Color bg) {
+        super.setBackground(bg);
+        if (rtable != null)
+            rtable.setBackground(bg);
+    }
+
+    public void setSelectionForeground(Color sfg) {
+        if (rtable != null)
+            rtable.setSelectionForeground(sfg);
+    }
+
+    public void setSelectionBackground(Color sbg) {
+        if (rtable != null)
+            rtable.setSelectionBackground(sbg);
     }
 
     /**

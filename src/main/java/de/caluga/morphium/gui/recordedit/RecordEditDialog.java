@@ -100,6 +100,7 @@ public class RecordEditDialog extends JDialog {
                 throw new RuntimeException("Fehler beim laden des Config-Panels für " + clsName);
             }
         }
+        pnl.setMainDialog(this);
         pnl.setViewOnly(viewOnly);
         okBtn.setVisible(!viewOnly);
         cancelBtn.setText(viewOnly ? "close" : "cancel");
@@ -166,51 +167,56 @@ public class RecordEditDialog extends JDialog {
         bpnl.add(cancelBtn);
         getContentPane().add(bpnl, BorderLayout.SOUTH);
         okBtn.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
-                boolean isNew = false;
-                if (MorphiumSingleton.get().getId(pnl.getRecord()) == null) {
-                    isNew = true;
-                }
-                try {
-                    pnl.updateRecord();
-                } catch (UpdateException e2) {
-                    JOptionPane.showMessageDialog(RecordEditDialog.this, e2.getMessage(), "Fehler",
-                            JOptionPane.ERROR_MESSAGE);
-                    log.warn("Error:" + e2.getMessage(), e2);
-                    return;
-                }
-                try {
-                    fireRecordModifiedEvent(pnl.getRecord(), isNew);
-                } catch (RecordModificationException ex) {
-                    JOptionPane.showMessageDialog(RecordEditDialog.this, ex.getMessage(), "Fehler",
-                            JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                MorphiumSingleton.get().store(pnl.getRecord());
-
-
-                dispose();
-                confirmed = true;
-                try {
-                    fireRecordChangedEvent(pnl.getRecord(), isNew);
-                } catch (RecordModificationException e1) {
-                    log.warn("Error:" + e1.getMessage(), e1);
-                }
-
+                storeAndDispose();
             }
         });
         cancelBtn.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
-                confirmed = false;
-                fireAbortEvent(pnl.getRecord());
-                dispose();
+                abort();
             }
         });
         pack();
         setLocation((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2 - getWidth() / 2), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2 - getHeight() / 2));
+    }
+
+    protected void storeAndDispose() {
+        boolean isNew = false;
+        if (MorphiumSingleton.get().getId(pnl.getRecord()) == null) {
+            isNew = true;
+        }
+        try {
+            pnl.updateRecord();
+        } catch (UpdateException e2) {
+            JOptionPane.showMessageDialog(this, e2.getMessage(), "Fehler",
+                    JOptionPane.ERROR_MESSAGE);
+            log.warn("Error:" + e2.getMessage(), e2);
+            return;
+        }
+        try {
+            fireRecordModifiedEvent(pnl.getRecord(), isNew);
+        } catch (RecordModificationException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Fehler",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        MorphiumSingleton.get().store(pnl.getRecord());
+
+
+        dispose();
+        confirmed = true;
+        try {
+            fireRecordChangedEvent(pnl.getRecord(), isNew);
+        } catch (RecordModificationException e1) {
+            log.warn("Error:" + e1.getMessage(), e1);
+        }
+    }
+
+    protected void abort() {
+        confirmed = false;
+        fireAbortEvent(pnl.getRecord());
+        dispose();
     }
 
     public Component add(Component c) {

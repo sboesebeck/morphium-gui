@@ -20,11 +20,20 @@ public abstract class RecordEditPanel<T> extends JPanel {
     protected boolean confirmed = false;
     private T theRecord;
     private boolean viewOnly = false;
+    private RecordEditDialog mainDialog;
 
     /**
      * hier passiert nix, nur wegen der Constructorvererbung
      */
     public RecordEditPanel() {
+    }
+
+    public RecordEditDialog getMainDialog() {
+        return mainDialog;
+    }
+
+    public void setMainDialog(RecordEditDialog mainDialog) {
+        this.mainDialog = mainDialog;
     }
 
     /**

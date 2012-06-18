@@ -180,7 +180,7 @@ public class RecordEditDialog extends JDialog {
         setLocation((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2 - getWidth() / 2), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2 - getHeight() / 2));
     }
 
-    protected void storeAndDispose() {
+    public void storeAndDispose() {
         boolean isNew = false;
         if (MorphiumSingleton.get().getId(pnl.getRecord()) == null) {
             isNew = true;
@@ -213,7 +213,7 @@ public class RecordEditDialog extends JDialog {
         }
     }
 
-    protected void abort() {
+    public void abort() {
         confirmed = false;
         fireAbortEvent(pnl.getRecord());
         dispose();

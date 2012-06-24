@@ -24,7 +24,9 @@ import org.jdesktop.swingx.decorator.HighlighterFactory;
 import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,6 +87,17 @@ public class RecordTable<T> extends JPanel {
     public void setSelectionBackground(Color sbg) {
         if (rtable != null)
             rtable.setSelectionBackground(sbg);
+    }
+
+    public T getRecordAtRow(int r) {
+        if (state.isSearchable()) {
+            r++;
+        }
+        return model.getData().get(r);
+    }
+
+    public long getRecordCount() {
+        return model.getElementCount();
     }
 
     /**

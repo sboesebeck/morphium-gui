@@ -90,6 +90,7 @@ public class RecordTable<T> extends JPanel {
     }
 
     public T getRecordAtRow(int r) {
+        if (model == null) return null;
         if (state.isSearchable()) {
             r++;
         }
@@ -97,6 +98,7 @@ public class RecordTable<T> extends JPanel {
     }
 
     public long getRecordCount() {
+        if (model == null) return 0;
         return model.getElementCount();
     }
 

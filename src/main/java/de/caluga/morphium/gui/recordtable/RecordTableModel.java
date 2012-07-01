@@ -9,12 +9,18 @@ import de.caluga.morphium.Query;
 import org.apache.log4j.Logger;
 import org.jdesktop.swingx.JXTable;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.HeadlessException;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -279,7 +285,16 @@ public class RecordTableModel<T> extends AbstractTableModel {
         if (initialState.isSearchable()) return String.class;
         String fld = (String) initialState.getFieldsToShow().get(columnIndex);
 //        if (log.isDebugEnabled()) log.debug("Returning " + Morphium.get().getTypeOfField(recordClass, fld).getName() + " for col " + columnIndex);
-        return MorphiumSingleton.get().getTypeOfField(recordClass, fld);
+        Class cls = MorphiumSingleton.get().getTypeOfField(recordClass, fld);
+        if (cls == null) {
+            //virtual field!
+            cls = initialState.getTypeOfVirtualField(fld);
+            if (cls == null) {
+                log.warn("No type for virtual field " + fld + " set! assuming String.");
+                cls = String.class;
+            }
+        }
+        return cls;
 //        return String.class;
     }
 

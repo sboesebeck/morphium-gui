@@ -10,5 +10,5 @@ package de.caluga.morphium.gui.recordtable;
  */
 public interface ColumnDataRenderer<T> {
 
-    public String renderValueFor(String fieldName, T value);
+    public Object renderValueFor(String fieldName, T value);
 }

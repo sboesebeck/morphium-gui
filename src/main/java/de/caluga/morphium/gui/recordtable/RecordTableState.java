@@ -162,7 +162,11 @@ public class RecordTableState<T> {
         if (initialSearch == null) {
             ret = MorphiumSingleton.get().createQueryFor(type);
         } else {
-            ret = initialSearch.clone();
+            try {
+                ret = initialSearch.clone();
+            } catch (CloneNotSupportedException e) {
+                //never happens
+            }
         }
         if (searchValues != null) {
             for (String s : searchValues.keySet()) {

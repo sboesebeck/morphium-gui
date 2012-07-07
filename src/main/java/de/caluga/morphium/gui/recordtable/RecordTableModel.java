@@ -214,7 +214,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
         }
         try {
             return MorphiumSingleton.get().getValue(r, (String) initialState.getFieldsToShow().get(col));
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             log.fatal("Illegal Access for Value " + row + "," + col + " (" + initialState.getFieldsToShow().get(col) + " of object " + r.getClass().getSimpleName());
             return "ERR";
         }
@@ -255,7 +255,7 @@ public class RecordTableModel<T> extends AbstractTableModel {
         }
         try {
             MorphiumSingleton.get().setValue(data.get(row), (String) initialState.getFieldsToShow().get(column), aValue);
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             log.fatal("Error setting value", e);
         }
     }

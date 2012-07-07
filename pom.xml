@@ -138,7 +138,7 @@
         <dependency>
             <groupId>de.caluga</groupId>
             <artifactId>morphium</artifactId>
-            <version>1.4.0</version>
+            <version>1.4.5</version>
         </dependency>
         <dependency>
             <groupId>org.swinglabs</groupId>

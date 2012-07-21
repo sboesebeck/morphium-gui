@@ -238,6 +238,8 @@ public class RecordTable<T> extends JPanel {
                 updateView();
             }
         });
+
+
     }
 
     public void addDoubleClickListener(DoubleClickListener dc) {
@@ -847,4 +849,6 @@ public class RecordTable<T> extends JPanel {
     private JButton prevBtn;
     private org.jdesktop.swingx.JXTable rtable;
     // End of variables declaration//GEN-END:variables
+
+
 }

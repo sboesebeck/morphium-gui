@@ -11,11 +11,14 @@ import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -115,22 +118,15 @@ public class RecordEditDialog extends JDialog {
                 final String lastChangeByField = MorphiumSingleton.get().getLastChangeByField(cls);
 
                 if (lastChangeByField != null) {
-                    try {
-                        usr = (String) MorphiumSingleton.get().getValue(r, lastChangeByField);
-                    } catch (IllegalAccessException e) {
-                        log.error("Error accessing last change by-field - IllegalAccess!");
-                    }
+                    usr = (String) MorphiumSingleton.get().getValue(r, lastChangeByField);
                 }
             }
         }
 
-        if (r != null && MorphiumSingleton.get().storesLastChange(cls)) {
-            try {
-                bpnl.add(new JLabel("letzte Änderung: " + usr + " am "
-                        + df.format(MorphiumSingleton.get().getLongValue(r, MorphiumSingleton.get().getLastChangeField(cls)))));
-            } catch (IllegalAccessException e) {
-                log.error("Error accessing last_change!!! Illegal access");
-            }
+        if (r != null && MorphiumSingleton.get().storesLastChange(cls) && MorphiumSingleton.get().getLongValue(r, MorphiumSingleton.get().getLastChangeField(cls)) != null) {
+
+            bpnl.add(new JLabel("letzte Änderung: " + usr + " am "
+                    + df.format(new Date(MorphiumSingleton.get().getLongValue(r, MorphiumSingleton.get().getLastChangeField(cls))))));
         }
 
 
@@ -138,18 +134,14 @@ public class RecordEditDialog extends JDialog {
 
 
         if (MorphiumSingleton.get().storesLastChange(r.getClass())) {
-            try {
-                if (MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeField(r.getClass())) != null) {
-                    String von = "";
-                    if (MorphiumSingleton.get().getLastChangeByField(r.getClass()) != null) {
-                        von = "von " + (String) MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeByField(r.getClass()));
-                    }
-                    bpnl.add(new JLabel("letzte Änderung " + von + " am " + df.format(MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeField(r.getClass())))));
-                } else {
-                    bpnl.add(new JLabel(" Neuer Datensatz"));
+            if (MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeField(r.getClass())) != null) {
+                String von = "";
+                if (MorphiumSingleton.get().getLastChangeByField(r.getClass()) != null) {
+                    von = "von " + (String) MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeByField(r.getClass()));
                 }
-            } catch (IllegalAccessException e) {
-                log.error("Illegal Access!");
+                bpnl.add(new JLabel("letzte Änderung " + von + " am " + df.format(MorphiumSingleton.get().getValue(r, MorphiumSingleton.get().getLastChangeField(r.getClass())))));
+            } else {
+                bpnl.add(new JLabel(" Neuer Datensatz"));
             }
         } else {
             if (MorphiumSingleton.get().getId(r) == null) {

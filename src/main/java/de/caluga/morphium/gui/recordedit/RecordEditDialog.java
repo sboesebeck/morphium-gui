@@ -117,7 +117,7 @@ public class RecordEditDialog extends JDialog {
                 if (lastChangeByField != null) {
                     try {
                         usr = (String) MorphiumSingleton.get().getValue(r, lastChangeByField);
-                    } catch (IllegalAccessException e) {
+                    } catch (Exception e) {
                         log.error("Error accessing last change by-field - IllegalAccess!");
                     }
                 }
@@ -128,7 +128,7 @@ public class RecordEditDialog extends JDialog {
             try {
                 bpnl.add(new JLabel("letzte Änderung: " + usr + " am "
                         + df.format(MorphiumSingleton.get().getLongValue(r, MorphiumSingleton.get().getLastChangeField(cls)))));
-            } catch (IllegalAccessException e) {
+            } catch (Exception e) {
                 log.error("Error accessing last_change!!! Illegal access");
             }
         }
@@ -148,7 +148,7 @@ public class RecordEditDialog extends JDialog {
                 } else {
                     bpnl.add(new JLabel(" Neuer Datensatz"));
                 }
-            } catch (IllegalAccessException e) {
+            } catch (Exception e) {
                 log.error("Illegal Access!");
             }
         } else {

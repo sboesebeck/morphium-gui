@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c597ca1-0542-4734-937b-a5be70757f6a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_caluga_morphium_1_4_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_caluga_morphium_1_4_10.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="MorphiumGUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,16 +65,16 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="44" selection-start="3502" selection-end="3502" vertical-scroll-proportion="0.0">
+            <state line="140" column="27" selection-start="4838" selection-end="4838" vertical-scroll-proportion="0.79257363">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload_to_google.sh" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/upload_to_google.sh">
+      <file leaf-file-name="BooleanRenderer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/renderer/BooleanRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="765" selection-end="765" vertical-scroll-proportion="0.30050084">
+            <state line="96" column="6" selection-start="3506" selection-end="3506" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -82,7 +83,7 @@
       <file leaf-file-name="RecordTable.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="7" selection-start="2805" selection-end="2805" vertical-scroll-proportion="0.0">
+            <state line="45" column="28" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,7 +92,7 @@
       <file leaf-file-name="RecordTableModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="17" selection-start="8982" selection-end="8982" vertical-scroll-proportion="0.0">
+            <state line="35" column="13" selection-start="964" selection-end="964" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,7 +101,7 @@
       <file leaf-file-name="RecordTableState.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="17" selection-start="4393" selection-end="4393" vertical-scroll-proportion="0.0">
+            <state line="298" column="24" selection-start="9096" selection-end="9096" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,21 +128,7 @@
       <file leaf-file-name="RecordEditDialog.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="17" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#6536#6674#0" expanded="true" />
-                <element signature="e#6663#6664#0" expanded="true" />
-                <element signature="e#6713#6841#0" expanded="true" />
-                <element signature="e#6830#6831#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CachedObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="48" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+            <state line="174" column="27" selection-start="6794" selection-end="6794" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -164,19 +151,19 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecMenuItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/renderer/BooleanRenderer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/TestObject.java" />
         <option value="$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObjectPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/AbstractRecMenuItem.java" />
         <option value="$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/TestRecordTab.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/PanelClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/ColumnDataRenderer.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java" />
-        <option value="$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/renderer/BooleanRenderer.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -196,6 +183,30 @@
           <option name="myItemId" value="" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="MorphiumGui" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="MorphiumGui" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
       </PATH>
     </treeState>
   </component>
@@ -203,8 +214,9 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="y" value="22" />
+    <option name="width" value="2560" />
+    <option name="height" value="1335" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -250,60 +262,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MorphiumGUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="morphium-gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MorphiumGUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="morphium-gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MorphiumGUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="morphium-gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -334,6 +292,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
@@ -580,6 +539,7 @@
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
     <configuration useDefault="false">$USER_HOME$/.subversion_IDEA</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
@@ -717,26 +677,34 @@
       <created>1341657232935</created>
       <updated>1341657232935</updated>
     </task>
-    <task id="LOCAL-00033" summary="exception fix?">
-      <created>1344425675772</created>
-      <updated>1344425675772</updated>
+    <task id="LOCAL-00033" summary="update to new morphium release">
+      <created>1341657587633</created>
+      <updated>1341657587633</updated>
     </task>
-    <task id="LOCAL-00034" summary="oh oh">
-      <created>1344425751063</created>
-      <updated>1344425751063</updated>
+    <task id="LOCAL-00034" summary="update to new morphium release">
+      <created>1342908637111</created>
+      <updated>1342908637111</updated>
     </task>
-    <task id="LOCAL-00035" summary="lot of things missing?!?!?">
-      <created>1344425807986</created>
-      <updated>1344425808001</updated>
+    <task id="LOCAL-00035" summary="bugfix">
+      <created>1343077182583</created>
+      <updated>1343077182583</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="new Release of Morphium">
+      <created>1343245591159</created>
+      <updated>1343245591159</updated>
+    </task>
+    <task id="LOCAL-00037" summary="new Release of Morphium">
+      <created>1344017018520</created>
+      <updated>1344017018520</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="22" width="2560" height="1335" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -745,36 +713,20 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955465" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32619774" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955465" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19797225" sideWeight="0.55249745" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19797225" sideWeight="0.11416922" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23959444" sideWeight="0.67380226" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29622266" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="100" y="100" width="1720" height="880" />
-      <window_info id="Code explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.67013526" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19210246" sideWeight="0.20897044" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Cloverage" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Code Consultant" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="CodeDependency" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Test Runs" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925585" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.5904685" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19809069" sideWeight="0.07431341" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2354813" sideWeight="0.6704362" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2945055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UML Diagrams" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32778355" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Code Graph" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Character Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955465" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662192" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
     </layout>
@@ -816,7 +768,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lot of things missing?!?!?" />
+    <option name="LAST_COMMIT_MESSAGE" value="new Release of Morphium" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -838,15 +790,13 @@
     <MESSAGE value="new version of morphium - small bugfix" />
     <MESSAGE value="api changes" />
     <MESSAGE value="small updates" />
-    <MESSAGE value="bugfix" />
     <MESSAGE value="API change in RecordEditDialog" />
     <MESSAGE value="api change" />
     <MESSAGE value="morphium update" />
     <MESSAGE value="returning record at specific row" />
     <MESSAGE value="update to new morphium release" />
-    <MESSAGE value="exception fix?" />
-    <MESSAGE value="oh oh" />
-    <MESSAGE value="lot of things missing?!?!?" />
+    <MESSAGE value="bugfix" />
+    <MESSAGE value="new Release of Morphium" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -856,6 +806,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/de/caluga/morphium/1.3.14/morphium-1.3.14-sources.jar!/de/caluga/morphium/Morphium.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1215" column="19" selection-start="44582" selection-end="44582" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/TestRecordTab.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="20" selection-start="1374" selection-end="1374" vertical-scroll-proportion="0.0" />
@@ -883,17 +838,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="7" selection-start="2805" selection-end="2805" vertical-scroll-proportion="0.0" />
+        <state line="45" column="28" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="17" selection-start="8982" selection-end="8982" vertical-scroll-proportion="0.0" />
+        <state line="35" column="13" selection-start="964" selection-end="964" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/RecordTableState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="17" selection-start="4393" selection-end="4393" vertical-scroll-proportion="0.0" />
+        <state line="298" column="24" selection-start="9096" selection-end="9096" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/ColumnDataRenderer.java">
@@ -908,26 +863,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordedit/RecordEditDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="17" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#6536#6674#0" expanded="true" />
-            <element signature="e#6663#6664#0" expanded="true" />
-            <element signature="e#6713#6841#0" expanded="true" />
-            <element signature="e#6830#6831#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="174" column="27" selection-start="6794" selection-end="6794" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/de/caluga/morphium/gui/tests/CachedObject.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/caluga/morphium/gui/recordtable/renderer/BooleanRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="48" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+        <state line="96" column="6" selection-start="3506" selection-end="3506" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="44" selection-start="3502" selection-end="3502" vertical-scroll-proportion="0.0">
+        <state line="140" column="27" selection-start="4838" selection-end="4838" vertical-scroll-proportion="0.79257363">
           <folding />
         </state>
       </provider>

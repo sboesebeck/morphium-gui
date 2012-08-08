@@ -3,12 +3,14 @@ package de.caluga.morphium.gui.recordtable.renderer;
 import de.caluga.morphium.gui.recordtable.RecordTableState;
 import org.apache.log4j.Logger;
 
-import javax.swing.*;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.event.CellEditorListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
-import java.awt.*;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.EventObject;
@@ -63,6 +65,7 @@ public class BooleanRenderer extends RecordTableColumnRenderer implements TableC
             bx = new JCheckBox();
             bx.setOpaque(true);
             bx.setSelected((Boolean) val);
+            bx.setEnabled(true);
             if (selected) {
                 bx.setBackground(arg0.getSelectionBackground());
                 bx.setForeground(arg0.getSelectionForeground());

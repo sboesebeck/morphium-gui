@@ -13,7 +13,7 @@ import org.bson.types.ObjectId;
 /**
  * @author stephan
  */
-@Cache(clearOnWrite = true, maxEntries = 20000, overridable = false, readCache = true, writeCache = true, strategy = Cache.ClearStrategy.LRU, timeout = 1000)
+@Cache(clearOnWrite = true, maxEntries = 20000, readCache = true, writeCache = true, strategy = Cache.ClearStrategy.LRU, timeout = 1000)
 @Entity
 @PanelClass(de.caluga.morphium.gui.tests.CachedObjectPanel.class)
 public class CachedObject {

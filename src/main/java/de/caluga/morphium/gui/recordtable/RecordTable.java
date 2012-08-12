@@ -169,7 +169,7 @@ public class RecordTable<T> extends JPanel {
                     if (log.isDebugEnabled())
                         log.debug("Right mousebutton pressed!");
                     if (!pop.isShowing()) {
-
+                        updatePopupMenu();
                         pop.setLocation(me.getXOnScreen(), me.getYOnScreen());
                         pop.setVisible(true);
                     }

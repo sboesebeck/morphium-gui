@@ -166,8 +166,8 @@ public class RecordTable<T> extends JPanel {
             public void mouseClicked(MouseEvent me) {
                 if (!enabled) return;
                 int row = rtable.rowAtPoint(me.getPoint());
-                rtable.getSelectionModel().clearSelection();
-                rtable.getSelectionModel().addSelectionInterval(row, row);
+//                rtable.getSelectionModel().clearSelection();
+//                rtable.getSelectionModel().addSelectionInterval(row, row);
                 updatePopupMenu();
                 if (me.getButton() == 3 || (me.getButton() == 1 && (me.getModifiers() & MouseEvent.CTRL_MASK) != 0)) {
                     if (log.isDebugEnabled())

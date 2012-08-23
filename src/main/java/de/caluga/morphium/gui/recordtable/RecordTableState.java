@@ -8,7 +8,7 @@ import de.caluga.morphium.MorphiumSingleton;
 import de.caluga.morphium.Query;
 import org.apache.log4j.Logger;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -29,7 +29,7 @@ public class RecordTableState<T> {
     private Map<String, RecordTableColumnTypes> displayTypeForField;
     private Map<String, ColumnDataRenderer> rendererMap;
 
-    private List<AbstractRecMenuItem> menuItemList;
+    private List<JMenuItem> menuItemList;
 
     private Map<String, Class<?>> typeOfVirtualField;
 
@@ -51,7 +51,7 @@ public class RecordTableState<T> {
         preCacheAll = true;
         paging = false;
         rendererMap = new HashMap<String, ColumnDataRenderer>();
-        menuItemList = new ArrayList<AbstractRecMenuItem>();
+        menuItemList = new ArrayList<JMenuItem>();
         typeOfVirtualField = new HashMap<String, Class<?>>();
     }
 
@@ -63,7 +63,7 @@ public class RecordTableState<T> {
         return typeOfVirtualField.get(field);
     }
 
-    public List<AbstractRecMenuItem> getMenuItemList() {
+    public List<JMenuItem> getMenuItemList() {
         return menuItemList;
     }
 

@@ -24,9 +24,7 @@ import org.jdesktop.swingx.decorator.HighlighterFactory;
 import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -321,16 +319,14 @@ public class RecordTable<T> extends JPanel {
                 pop.add(delMi);
             }
         }
-        List<AbstractRecMenuItem> menuItemList = state.getMenuItemList();
-        for (AbstractRecMenuItem it : menuItemList) {
-            it.setEnabled(it.isEnabled(getSelectedRecord()));
+        List<JMenuItem> menuItemList = state.getMenuItemList();
+        for (JMenuItem it : menuItemList) {
+            if (it instanceof AbstractRecMenuItem) {
+                it.setEnabled(((AbstractRecMenuItem) it).isEnabled(getSelectedRecord()));
+            }
             pop.add(it);
         }
 
-    }
-
-    public void addContextMenuItem(JMenuItem it) {
-        pop.add(it);
     }
 
     public void newRecord() {

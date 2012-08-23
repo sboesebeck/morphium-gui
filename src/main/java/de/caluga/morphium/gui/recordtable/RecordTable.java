@@ -163,17 +163,20 @@ public class RecordTable<T> extends JPanel {
             @Override
             public void mouseClicked(MouseEvent me) {
                 if (!enabled) return;
+                int row = rtable.rowAtPoint(me.getPoint());
+//                rtable.getSelectionModel().clearSelection();
+//                rtable.getSelectionModel().addSelectionInterval(row, row);
+                updatePopupMenu();
                 if (me.getButton() == 3 || (me.getButton() == 1 && (me.getModifiers() & MouseEvent.CTRL_MASK) != 0)) {
                     if (log.isDebugEnabled())
                         log.debug("Right mousebutton pressed!");
-                    if (!pop.isShowing()) {
 
-                        pop.setLocation(me.getXOnScreen(), me.getYOnScreen());
-                        pop.setVisible(true);
-                    }
-                    int row = rtable.rowAtPoint(me.getPoint());
-                    rtable.getSelectionModel().clearSelection();
-                    rtable.getSelectionModel().addSelectionInterval(row, row);
+
+//                    if (!pop.isShowing()) {
+
+//                        pop.setLocation(me.getXOnScreen(), me.getYOnScreen());
+//                        pop.setVisible(true);
+//                    }
                     if (getSelectedRecord() != null) {
                         if (delMi != null) {
                             delMi.setEnabled(true);

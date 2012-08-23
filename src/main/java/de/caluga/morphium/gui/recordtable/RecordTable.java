@@ -321,6 +321,10 @@ public class RecordTable<T> extends JPanel {
         }
         List<JMenuItem> menuItemList = state.getMenuItemList();
         for (JMenuItem it : menuItemList) {
+            if (it == null) {
+                pop.addSeparator();
+                continue;
+            }
             if (it instanceof AbstractRecMenuItem) {
                 it.setEnabled(((AbstractRecMenuItem) it).isEnabled(getSelectedRecord()));
             }

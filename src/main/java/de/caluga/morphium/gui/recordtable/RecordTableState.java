@@ -71,7 +71,7 @@ public class RecordTableState<T> {
         return rendererMap;
     }
 
-    public void addMenuItem(AbstractRecMenuItem mi) {
+    public void addMenuItem(JMenuItem mi) {
         menuItemList.add(mi);
     }
 

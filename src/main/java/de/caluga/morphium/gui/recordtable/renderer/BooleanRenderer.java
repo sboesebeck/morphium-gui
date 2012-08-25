@@ -53,6 +53,9 @@ public class BooleanRenderer extends RecordTableColumnRenderer implements TableC
             if (selected) {
                 bx.setBackground(arg0.getSelectionBackground());
                 bx.setForeground(arg0.getSelectionForeground());
+            } else {
+                bx.setBackground(arg0.getBackground());
+                bx.setForeground(arg0.getForeground());
             }
             bx.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
@@ -73,6 +76,9 @@ public class BooleanRenderer extends RecordTableColumnRenderer implements TableC
             if (selected) {
                 bx.setBackground(arg0.getSelectionBackground());
                 bx.setForeground(arg0.getSelectionForeground());
+            } else {
+                bx.setBackground(arg0.getBackground());
+                bx.setForeground(arg0.getForeground());
             }
             bx.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {

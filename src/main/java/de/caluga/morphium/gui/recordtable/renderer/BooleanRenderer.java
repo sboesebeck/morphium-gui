@@ -64,7 +64,11 @@ public class BooleanRenderer extends RecordTableColumnRenderer implements TableC
         if (getTableState().isEditable()) {
             bx = new JCheckBox();
             bx.setOpaque(true);
-            bx.setSelected((Boolean) val);
+            if (val == null) {
+                bx.setSelected(false);
+            } else {
+                bx.setSelected((Boolean) val);
+            }
             bx.setEnabled(true);
             if (selected) {
                 bx.setBackground(arg0.getSelectionBackground());

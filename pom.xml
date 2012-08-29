@@ -117,7 +117,7 @@
         <dependency>
             <groupId>de.caluga</groupId>
             <artifactId>morphium</artifactId>
-            <version>1.4.17</version>
+            <version>1.4.20</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

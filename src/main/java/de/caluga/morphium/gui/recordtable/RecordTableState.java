@@ -5,10 +5,11 @@
 package de.caluga.morphium.gui.recordtable;
 
 import de.caluga.morphium.MorphiumSingleton;
-import de.caluga.morphium.Query;
+import de.caluga.morphium.query.Query;
 import org.apache.log4j.Logger;
 
-import javax.swing.*;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import java.util.*;
 import java.util.regex.Pattern;
 

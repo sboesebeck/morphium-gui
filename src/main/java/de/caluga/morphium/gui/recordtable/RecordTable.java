@@ -11,9 +11,9 @@
 package de.caluga.morphium.gui.recordtable;
 
 import de.caluga.morphium.MorphiumSingleton;
-import de.caluga.morphium.Query;
 import de.caluga.morphium.gui.recordedit.RecordEditDialog;
 import de.caluga.morphium.gui.recordtable.renderer.BooleanRenderer;
+import de.caluga.morphium.query.Query;
 import de.caluga.morphium.secure.MongoSecurityException;
 import de.caluga.morphium.secure.Permission;
 import org.apache.log4j.Logger;
@@ -24,7 +24,9 @@ import org.jdesktop.swingx.decorator.HighlighterFactory;
 import javax.swing.*;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -235,7 +237,7 @@ public class RecordTable<T> extends JPanel {
         delMi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MorphiumSingleton.get().deleteObject(getSelectedRecord());
+                MorphiumSingleton.get().delete(getSelectedRecord());
                 updateView();
             }
         });
@@ -357,7 +359,7 @@ public class RecordTable<T> extends JPanel {
     public void deleteSelectedRecord() {
         int ret = JOptionPane.showConfirmDialog(this, "Den Eintrag wirklich löschen?", "Frage", JOptionPane.OK_CANCEL_OPTION);
         if (ret == JOptionPane.OK_OPTION) {
-            MorphiumSingleton.get().deleteObject(getSelectedRecord());
+            MorphiumSingleton.get().delete(getSelectedRecord());
             updateView();
         }
     }

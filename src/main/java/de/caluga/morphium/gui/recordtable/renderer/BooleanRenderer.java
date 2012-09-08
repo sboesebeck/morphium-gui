@@ -4,7 +4,6 @@ import de.caluga.morphium.gui.recordtable.RecordTableState;
 import org.apache.log4j.Logger;
 
 import javax.swing.JCheckBox;
-import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.event.CellEditorListener;
 import javax.swing.event.ChangeEvent;
@@ -64,33 +63,29 @@ public class BooleanRenderer extends RecordTableColumnRenderer implements TableC
             });
             return bx;
         }
-        if (getTableState().isEditable()) {
-            bx = new JCheckBox();
-            bx.setOpaque(true);
-            if (val == null) {
-                bx.setSelected(false);
-            } else {
-                bx.setSelected((Boolean) val);
-            }
-            bx.setEnabled(true);
-            if (selected) {
-                bx.setBackground(arg0.getSelectionBackground());
-                bx.setForeground(arg0.getSelectionForeground());
-            } else {
-                bx.setBackground(arg0.getBackground());
-                bx.setForeground(arg0.getForeground());
-            }
-            bx.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent evt) {
-                    stopCellEditing();
-                }
-            });
-            return bx;
+        bx = new JCheckBox();
+        bx.setOpaque(true);
+        if (val == null) {
+            bx.setSelected(false);
+        } else {
+            bx.setSelected((Boolean) val);
         }
-        if (val == null) return new JLabel("n/a");
-        if (val.equals(Boolean.FALSE)) return new JLabel("Nein");
-        if (val.equals(Boolean.TRUE)) return new JLabel("Ja");
-        return new JLabel();
+        bx.setEnabled(true);
+        if (selected) {
+            bx.setBackground(arg0.getSelectionBackground());
+            bx.setForeground(arg0.getSelectionForeground());
+        } else {
+            bx.setBackground(arg0.getBackground());
+            bx.setForeground(arg0.getForeground());
+        }
+
+        bx.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                stopCellEditing();
+            }
+        });
+        return bx;
+
     }
 
     /*

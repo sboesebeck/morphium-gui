@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c597ca1-0542-4734-937b-a5be70757f6a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_caluga_morphium_1_5_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_2_9_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MorphiumGUI.iml" afterPath="$PROJECT_DIR$/MorphiumGUI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1c597ca1-0542-4734-937b-a5be70757f6a" name="Default" comment="" />
     <ignored path="MorphiumGUI.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357556380107" ignored="false" />
+    <file path="/Dummy.txt" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357558794710" ignored="false" />
+    <file path="/pom.xml" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357556488886" ignored="false" />
+    <file path="$USER_HOME$/CalugaMed/pom.xml" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357556496817" ignored="false" />
+    <file path="/Behandlung.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357557347005" ignored="false" />
+    <file path="$USER_HOME$/CalugaMed/src/de/caluga/med/data/Behandlung.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357557347005" ignored="false" />
+    <file path="$USER_HOME$/CalugaMed/src/de/caluga/med/gui/befund/PreviewLabel.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357558801894" ignored="false" />
+    <file path="/PreviewLabel.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357556875191" ignored="false" />
+    <file path="$USER_HOME$/CalugaMed/src/de/caluga/med/gui/TerminbuchView.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357558802007" ignored="false" />
+    <file path="/TerminbuchView.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357557839233" ignored="false" />
+    <file path="$USER_HOME$/CalugaMed/src/de/caluga/med/gui/behandlung/BehandlungsView.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357558801894" ignored="false" />
+    <file path="/BehandlungsView.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357558651002" ignored="false" />
+    <file path="$USER_HOME$/CalugaMed/src/de/caluga/med/gui/DiagnoseTableModel.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357558801894" ignored="false" />
+    <file path="/DiagnoseTableModel.java" changelist="1c597ca1-0542-4734-937b-a5be70757f6a" time="1357558114442" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -693,7 +699,11 @@
       <created>1357556383514</created>
       <updated>1357556383514</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="new version of morphium - V1.5.0 for MongodbV2.2.x">
+      <created>1357556474634</created>
+      <updated>1357556474634</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -714,11 +724,11 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32600734" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19797225" sideWeight="0.5712831" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19797225" sideWeight="0.12932791" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19797225" sideWeight="0.12932791" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22411953" sideWeight="0.7077393" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2922607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2922607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="100" y="100" width="1720" height="880" />
       <window_info id="Code explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19210246" sideWeight="0.20897044" order="10" side_tool="true" content_ui="tabs" />
